@@ -23,7 +23,7 @@ def main():
 
 
 def ini_write(path):
-    f = open(path,"r")
+    f = open(file = path, mode = "r",encoding="utf8")
     controll_key = ["alt","ctrl"]
     counter = 1
     cycle = 0
@@ -41,7 +41,7 @@ def ini_write(path):
         else :
             lines.append(line)
     f.close()
-    f = open(path,"w")
+    f = open(path,mode = "w",encoding="utf8")
     for line in lines:
         f.write(line)
     return 1
