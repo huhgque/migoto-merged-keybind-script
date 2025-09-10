@@ -32,6 +32,9 @@ def ini_write(path):
     control_2 = "no_" + controll_key[1]
     for line in f:
         if line.__contains__("key = "):
+            if line.__contains__("VK_LBUTTON") or line.__contains__("VK_RBUTTON"):
+                lines.append(line)
+                continue
             key_command = "{} {} {}\n"
             lines.append( "key = "+key_command.format(control_1,control_2,counter))
             counter+=1
